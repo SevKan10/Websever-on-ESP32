@@ -139,6 +139,7 @@ void setup() {
             <td>
                 <label for="time">Choose Time:</label>
                 <select name="hour" id="hour">
+                    <option value="0">0</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -162,10 +163,10 @@ void setup() {
                     <option value="21">21</option>
                     <option value="22">22</option>
                     <option value="23">23</option>
-                    <option value="0">0</option>
                 </select>
                 <label for="time">:</label>
                 <select name="minute" id="minute">
+                    <option value="0">0</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -224,7 +225,6 @@ void setup() {
                     <option value="57">57</option>
                     <option value="58">58</option>
                     <option value="59">59</option>
-                    <option value="0">0</option>
                 </select>
             </td>
             <td>
