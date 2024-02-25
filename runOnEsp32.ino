@@ -104,6 +104,13 @@ void setup() {
     <br>
     <table align="center">
         <tr>
+            <td >
+                <label>SET TIME</label>
+            </td>
+        </tr>
+    </table>
+    <table align="center">
+        <tr>
             <td>
                 <label for="device">Choose Device:</label>
                 <select name="device" id="device">
@@ -132,7 +139,6 @@ void setup() {
             <td>
                 <label for="time">Choose Time:</label>
                 <select name="hour" id="hour">
-                    <option value="0">0</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -156,10 +162,10 @@ void setup() {
                     <option value="21">21</option>
                     <option value="22">22</option>
                     <option value="23">23</option>
+                    <option value="0">0</option>
                 </select>
                 <label for="time">:</label>
                 <select name="minute" id="minute">
-                    <option value="0">0</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -218,6 +224,7 @@ void setup() {
                     <option value="57">57</option>
                     <option value="58">58</option>
                     <option value="59">59</option>
+                    <option value="0">0</option>
                 </select>
             </td>
             <td>
@@ -234,16 +241,15 @@ void setup() {
             var weekday = document.getElementById("weekday").value;
             var hour = document.getElementById("hour").value;
             var minute = document.getElementById("minute").value;
-            console.log('Entered information is:\n' +
-            'Device: ' + device + '\nDay: ' + weekday + '\nTime: ' + hour + ':' + minute);
-    
+            console.log('Entered information is:\n' + 'Device: ' + device + '\nDay: ' + weekday + '\nTime: ' + hour + ':' + minute);
+
             sendToESP(device, weekday, hour, minute);
         }
-    
+
         function sendToESP(device, weekday, hour, minute) {
             var xhr = new XMLHttpRequest();
             var url = "http://192.168.1.4/process_data?device=" + device + "&weekday=" + weekday + "&hour=" + hour + "&minute=" + minute;
-    
+
             xhr.open("GET", url, true);
             xhr.send();
         }
